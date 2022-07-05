@@ -1,0 +1,75 @@
+# ===================================================================
+# 1- Faça um código que irá receber uma lista de dicionários e irá
+# concatená-los em um único novo dicionário. Caso uma mesma chave esteja
+# presente em mais de um dicionário, some seus valores.
+
+# Exemplo: 
+# [{"final fantasy":14, "persona":4},
+#  {"persona":3, "elden ring":1},
+#  {"trails":11, "celeste":40}]
+
+# Output:
+# {"final fantasy":14, "persona":7, "elden ring":1,
+#  "trails":11, "celeste":40}
+# ===================================================================
+
+lista = [{"final fantasy":14, "persona":4}, {"persona":3, "elden ring": 1}, {"trails": 11, "celeste": 40}]
+
+dicionarioGeral = {}
+for dicionario in lista:
+    #metodo keys() retorna uma lista com as chaves de um dicionario
+    for chaves in dicionario.keys():
+        if not chaves in dicionarioGeral.keys():
+            dicionarioGeral[chaves] = dicionario[chaves]
+        else:
+            dicionarioGeral[chaves] = dicionarioGeral[chaves] + dicionario[chaves]
+print (dicionarioGeral)
+
+
+# ===================================================================
+# 2- Faça um código que irá converter uma string para um dicionário.
+
+# Exemplo:
+# "batata frita"
+
+# Output:
+# {"b":1, "a":4, "t":3, "f":1, "r":1, "i":1}
+# ===================================================================
+
+string = "batata frita"
+
+dicio = {}
+for letras in string:
+    contagem = string.count(letras)
+    if letras != " ":
+        dicio[letras] = contagem
+print (dicio)
+
+
+# ===================================================================
+# 3- Defina uma função que irá receber um dicionário de nomes,
+# peso e altura, e também irá receber um peso e uma altura.
+# Essa função deverá retornar um novo dicionário, contendo apenas os
+# nomes cujo peso e altura sejam acimas dos recebidos pela função.
+
+# Exemplo:
+# dicionario = {"Tiago": (166.5, 60),
+#  				"Batata": (172, 71),
+#  				"Teclado": (156, 48)}
+# resultado = checaPesoAltura(dicionario, 160, 62)
+
+# Output:
+# {"Batata": (172, 71)}
+# ===================================================================
+
+dicionario = {"Tiago": (166.5, 60),	"Batata": (172, 71), "Teclado": (156, 48)}
+
+def resultado (dicio, altura, peso)
+    dicionarioFinal = {}
+    for chave in dicio.keys():
+        #considera apenas se ambos os valores forem acima do desejado
+        if dicio[chave][0] > altura and dicio[chave][1]>peso:
+            dicionarioFinal[chave]=dicio[chave]
+    return dicionarioFinal
+
+print (resultado(dicionario, 150, 23))
